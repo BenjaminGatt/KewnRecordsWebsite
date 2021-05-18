@@ -1,0 +1,738 @@
+/*
+
+    Dark Grey: #2f3234
+    Offwhite: #d0cdcb
+    Darker Offwhite: #cbc7c5
+
+*/
+
+/*---------------------------------------------------------------*/
+/* BASIC SETUP */
+/*---------------------------------------------------------------*/
+
+* {
+  /*Override browser default margin and padding for all elements by setting it to 0.*/
+  margin: 0;
+  padding: 0;
+  /*Setting box-sizing to border-box makes it easier to keep formatting of elements consistent. Refer to the CSS box model notes for more info.*/
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html,
+body {
+  /*Background color of the webpage.*/
+  background-color: #fff;
+  /*Text color of the webpage.*/
+  color: #555;
+  /*Use the Lato font. If Lato is not found, use the Arial font. If Arial is not found, use any sans-serif font.*/
+  font-family: "Lato", "Arial", sans-serif;
+  /*We imported three different Lato weights: 100, 300, and 400. We want our default to be 300.*/
+  font-weight: 300;
+  font-size: 20px;
+  /*Render fonts so they are readable.*/
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  /*Scrolling behaviour when clicking a button to an anchor.*/
+  scroll-behavior: smooth;
+}
+
+/*We've added this to clear the floats used in the Favourite Meals images section. Specifically, this class clears the float after an element.
+      We will be using it to stop the How it Works section from starting mid-way through the Favourite Meals section and ruining the whitespace.*/
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/*---------------------------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*---------------------------------------------------------------*/
+
+/*Here we define the row class so that we can use it in conjunction with the grid.css stylesheet.*/
+.row {
+  /*This is the only value which should be defined in absolute pixels. Everything else will be defined in percentages. 
+          Except for a bunch of other selectors, apparently.*/
+  max-width: 1140px;
+  /*This shorthand sets the top and bottom margins to 0, and the left and right margins to auto.
+          We're doing this to center our content within elements with the .row class on the screen.*/
+  margin: 0 auto;
+}
+
+section {
+  /*We're using padding here instead of margins so that it will look neat when we add background colors.*/
+  padding: 80px 0;
+}
+
+.box {
+  padding: 1%;
+}
+
+/* ----- HEADINGS ----- */
+
+h1,
+h2,
+h3 {
+  /*When increasing font size, decreasing font-weight makes it look neater and more professional.
+          h1 elements usually come with bold formatting, and we don't want that in this case.*/
+  font-weight: 300;
+  /*Transforming text to uppercase changes the text to uppercase without us having to do it manually.*/
+  text-transform: uppercase;
+}
+
+h1 {
+  /*Setting the h1 margins to 0 overrides the margins enforced by the normalize.css stylesheet.*/
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  /*In responsive web design, we want everything to be relative. Our base font-size is 20px, as set in the html rule above.
+          So we will set our h1 font-size to be relative to that value, instead of applying another fixed value.*/
+  font-size: 150%;
+  /*Some letter spacing and word spacing can really make a difference in a headline.*/
+  letter-spacing: 1px;
+  word-spacing: 4px;
+  line-height: 50px;
+}
+
+h2 {
+  font-size: 180%;
+  /*Some letter spacing and word spacing can really make a difference in a headline.*/
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+  /*Margin between h2:after and what comes after that.*/
+  margin-bottom: 30px;
+}
+
+/*This pseudoclass indicates what will appear after h2.*/
+h2:after {
+  display: block;
+  height: 1px;
+  background-color: #2f3234;
+  /*When declaring an after pseudoclass, we must speciy its contents. We don't want anything inside it, so we leave a blank space in quotations.*/
+  content: " ";
+  width: 100px;
+  /*margin beween h2:after and h2.*/
+  margin: 0 auto;
+  margin-top: 30px;
+  /*margin: 30px auto 0 auto;*/
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 150%;
+  font-weight: 400;
+  padding-bottom: 30px;
+}
+
+/* ----- PARAGRAPHS ----- */
+
+.long-copy {
+  line-height: 145%;
+  /*We reduce the width of the paragraph so that there is not too much text per line, potentially losing users' interest.*/
+  width: 70%;
+  /*Total width of page is 100%, so if we want to center this text, we have to do: 100-70=30. 30/2 = 15.*/
+  margin-left: 15%;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+
+/* ----- ICONS ----- */
+
+.icon-big {
+  /*The icons from ionicons.com count as fonts, so we can manipulate them as we would normal fonts.*/
+  font-size: 350%;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+  font-size: 120%;
+  margin-right: 10px;
+  /*Aligning text and icons*/
+  line-height: 120%;
+  vertical-align: middle;
+  /*Removing some margin to force alignment.*/
+  margin-top: -2px;
+}
+
+/* ----- LINKS ----- */
+
+a:link,
+a:visited {
+  color: #e67e22;
+  text-decoration: none;
+  padding-bottom: 1px;
+  /* border-bottom: 1px solid #e67e22; */
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  /* border-bottom: 1px solid transparent; */
+}
+
+/* ----- BUTTONS ----- */
+
+/*This btn class has declarations whcih will be common to all buttons.*/
+/*Links/buttons can have different states: link, visited, active, and hover. Link is how the element looks normally.
+      We declare this using pseudo-classes. A pseudo-class is used to define a special state of an element.
+      We also don't want the button to look differently after it's been clicked, so we make the visited state identical
+      to the link state.*/
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  /*An inline block is like an inline element but can have padding and margins. It still does not force a line-break.
+          Link (<a>) elements are inline, but we want these to be inline-blocks instead.*/
+  display: inline-block;
+  /*Top and bottom padding 10px, left and right padding 30px.*/
+  padding: 25px 30px;
+  font-weight: 400;
+  font-size: 120%;
+  /*Removing text-decoration removes link underlines.*/
+  text-decoration: none;
+  /*Applying a border radius rounds the corners of the buttons.*/
+  border-radius: 200px;
+  /*We've set a duration for the transition between background colors, border colors, and text colors. The change is now no longer instantaneous.*/
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+  background-color: #d0cdcb;
+  color: #2f3234;
+  /*We've applied the same border we have for the ghost button to this button so that both buttons will be the same height and width due to box-sizing.
+          Referring to the box model, the height and width of an element is the content + padding + border.*/
+  border: 1px solid #d0cdcb;
+  /*Added a bit of space between the two buttons.*/
+  margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  /*We've applied a border to the ghost button. The border is 1px thick, a solid line, and the colour orange.*/
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+
+/*What will happen when the user hovers over or clicks the button.
+      NOTE: The hover and active pseudo-classes should be placed after the link and visited pseudo-classes so that the hover animation is applied properly.*/
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  color: #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  /*We've applied a border to the ghost button. The border is 1px thick, a solid line, and the colour orange.*/
+  border: 1px solid #cf6d17;
+  color: #fff;
+}
+
+/*---------------------------------------------------------------*/
+/* HEADER */
+/*---------------------------------------------------------------*/
+
+header {
+  /*We've placed the hero image in the css folder because we need to use it in CSS.*/
+  /*We've added a gradient over the background image to create contrast with the text that goes on top.
+          This gradient is one color in this case, and has a transparency of 70%.*/
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero-image.jpg);
+  /*Background-size: cover, makes it so that the entire image is displayed on the screen.*/
+  background-size: cover;
+  /*Background-position: center, centers the image.*/
+  background-position: center;
+  /*Image will remain static even when page is being scrolled.*/
+  background-attachment: fixed;
+  /*We've set the height of the header to 100% of the viewport, so that the entire image is shown in the header.
+          If we don't do this, the image will still be in the header, but only the parts where other content, such as
+          text, are present, will be visible.*/
+  height: 100vh;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.hero-text-box {
+  /*We want this text box to be absolutely positioned, so that we can center it vertically and horizontally. We will not be using the ResponsiveGridSystem's grid.css for this.*/
+  position: absolute;
+  width: 1140px;
+  /*Top and left 50% will position the div at the center of the screen.*/
+  top: 50%;
+  left: 50%;
+  /*Transform: translate(-50%, -50%) will move the element half its width and half its height backwards, so that it will be centered.*/
+  transform: translate(-50%, -50%);
+  padding-top: 250px;
+}
+
+.hero-text-box h1 {
+  color: #fff;
+}
+
+.hero-text-box a {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  /*This element will float to the left side.*/
+  float: left;
+  /*Space between logo and top of page.*/
+  margin-top: 20px;
+}
+
+.hero-logo,
+.about-logo {
+  position: absolute;
+  width: 1140px;
+  /* top: 35%; */
+  left: 50%;
+}
+
+.hero-logo img,
+.about-logo img {
+  width: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-logo {
+  top: 35%;
+}
+
+.about-logo {
+  top: 80%;
+}
+
+/* MAIN NAV */
+
+.main-nav {
+  float: right;
+  /*Main nav is an unordered list. Removing the list style will remove the bullet points.*/
+  list-style: none;
+  /*Space between navigation buttons and top of page.*/
+  margin-top: 55px;
+}
+
+/*This selector refers to all <li> within the <ul> with the .main-nav class.*/
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+/*This selector refers to all <a> within <li> within the <ul> with the .main-nav class.*/
+.main-nav li a:link,
+.main-nav li a:visited {
+  /*Top and bottom padding 8px, left and right padding 0px. This is to have some space between the button text and the
+          bottom border that appears on hover.*/
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  /*We want this to have a border, so that it can appear on hover. However, we don't want it to appear while it is not hovered,
+          so we make it transparent here.*/
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #e67e22;
+  transition: border-bottom 0.2s;
+}
+
+.selected {
+  font-weight: 700;
+}
+
+/*---------------------------------------------------------------*/
+/* BANNER */
+/*---------------------------------------------------------------*/
+
+.banner {
+  min-width: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+/*---------------------------------------------------------------*/
+/* UPDATES */
+/*---------------------------------------------------------------*/
+
+.updates {
+  background-color: #fcfcfc;
+}
+
+.updates-header {
+  text-align: center;
+}
+
+.updates-header h1 {
+  display: inline-block;
+  color: #2f3234;
+  margin-top: 100px;
+}
+
+.top-frame {
+  margin-bottom: 50px;
+}
+
+/*---------------------------------------------------------------*/
+/* CONTACT */
+/*---------------------------------------------------------------*/
+
+label {
+  color: #2f3234;
+  font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: #f3f3f3;
+  border: 1px solid #707070;
+  font-size: 100%;
+  font-style: italic;
+  font-weight: 300;
+  padding: 15px;
+  min-width: 500px;
+}
+
+textarea {
+  min-height: 230px;
+}
+
+input[type="submit"] {
+  font-size: 120%;
+  padding: 20px 40px;
+}
+
+/*---------------------------------------------------------------*/
+/* FOOTER */
+/*---------------------------------------------------------------*/
+
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 80%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+}
+
+/*Remove the margin from the right-most element, as it is not needed.*/
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:hover {
+  color: #ddd;
+}
+
+.facebook-icon,
+.twitter-icon,
+.googleplus-icon,
+.instagram-icon {
+  transition: color 0.2s;
+}
+
+.facebook-icon:hover,
+.facebook-icon:active {
+  color: #3b5998;
+}
+
+.twitter-icon:hover,
+.twitter-icon:active {
+  color: #00aced;
+}
+
+.googleplus-icon:hover,
+.googleplus-icon:active {
+  color: #dd4b39;
+}
+
+.instagram-icon:hover,
+.instagram-icon:active {
+  color: #517fa4;
+}
+
+footer p {
+  color: #d0cdcb;
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer span {
+  color: #d0cdcb;
+}
+
+.social {
+  text-align: center;
+}
+
+.social-path {
+  fill: #d0cdcb;
+  stroke: #d0cdcb;
+}
+
+.to-top a {
+  display: flex;
+  align-items: center;
+  border: 0;
+}
+
+.to-top span {
+  padding-left: 20px;
+}
+
+/*---------------------------------------------------------------*/
+/* PAGES */
+/*---------------------------------------------------------------*/
+.page-title {
+  padding-top: 60px;
+}
+
+.page-title h1 {
+  font-size: 200%;
+  font-weight: 300;
+}
+
+.page-title h2 {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.page-title h2,
+.page-title h3,
+.page-title h4,
+.artists-text {
+  color: #fff;
+  text-align: left;
+}
+
+.page-text {
+  padding-top: 30px;
+  color: #fff;
+}
+
+.page-text p {
+  line-height: 39px;
+  margin-bottom: 24px;
+  font-size: 120%;
+}
+
+.page-text li {
+  padding-bottom: 10px;
+  font-size: 110%;
+  word-spacing: 2px;
+}
+
+.contact-page label {
+  color: #fff;
+}
+
+.fb-video,
+.fb-post {
+  margin-bottom: 40px;
+}
+
+.deheb-incens-bila,
+.four-hundred-ppm {
+  width: 75%;
+}
+
+.bestjarju-column {
+  overflow: hidden;
+}
+
+.bestjarju {
+  width: 130%;
+  transform: translate(-20%, -10%);
+}
+
+.bestjarju-band {
+  margin-top: -33px;
+}
+
+.do-what-i-want {
+  width: 100%;
+  transform: translate(0, 10%);
+}
+
+.do-what-i-want-band {
+  margin-top: 21px;
+}
+
+.releases-text {
+  color: #fff;
+  margin-top: -15px;
+  font-weight: 400;
+}
+
+.updates-middle {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero-image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bila-logo,
+.four-hundred-ppm-logo {
+  width: 100%;
+}
+
+.bila-logo-container,
+.four-hundred-ppm-logo-container {
+  background-color: #fff;
+  min-height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.artists-spacing {
+  margin-right: 50px;
+}
+
+.order-btn-col {
+  text-align: center;
+}
+
+.bila-hero {
+  margin-bottom: 200px;
+}
+
+.bila-page {
+  margin-top: -280px;
+}
+
+.bila-hero,
+.bila-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/WN_BILA_3.jpg);
+}
+
+.david-buckel-hero,
+.david-buckel-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/400PPM\ Front\ Cover.png);
+}
+
+.artists-hero,
+.releases-hero,
+.bila-page,
+.david-buckel-page {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 80vh;
+}
+
+.releases-hero nav,
+.bila-hero nav {
+  padding-top: 0;
+  margin-top: -80px;
+}
+
+.release-media-div {
+  padding: 30px 0;
+  overflow: hidden;
+}
+.release-media-div:hover {
+  overflow: visible;
+}
+
+.release-media-div img {
+  transform: scale(2, 2);
+}
+
+.release-media-div img:hover {
+  transform: scale(5, 5);
+  position: absolute;
+  z-index: 999;
+  transition: 200ms;
+}
+
+.bila-photo-div {
+  overflow: hidden;
+}
+
+.bila-photo {
+  width: 130%;
+}
+
+.artists-about {
+  color: #fff;
+}
+
+.artists-about p {
+  letter-spacing: 2px;
+  line-height: 25px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.artist-links {
+  padding-top: 30px;
+}
+
+.artist-links li {
+  display: inline-block;
+  text-align: center;
+}
+
+.artist-links li:first-child {
+  padding-left: 150px;
+}
