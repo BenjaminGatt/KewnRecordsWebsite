@@ -286,6 +286,7 @@ header {
   /*Transform: translate(-50%, -50%) will move the element half its width and half its height backwards, so that it will be centered.*/
   transform: translate(-50%, -50%);
   padding-top: 250px;
+  text-align: center;
 }
 
 .hero-text-box h1 {
@@ -295,7 +296,7 @@ header {
 .hero-text-box a {
   display: inline-block;
   margin-left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-180%);
   margin-top: 50px;
 }
 
@@ -371,16 +372,28 @@ header {
   font-weight: 700;
 }
 
+.mobile-nav-icon {
+  display: none;
+}
+
 /*---------------------------------------------------------------*/
 /* BANNER */
 /*---------------------------------------------------------------*/
 
 .banner {
   min-width: 100%;
+  text-align: center;
 }
 
 .banner img {
   width: 100%;
+}
+
+.previous-btn,
+.next-btn {
+  border-radius: 50%;
+  margin: 20px 5px;
+  padding: 0 6px;
 }
 
 /*---------------------------------------------------------------*/
@@ -561,6 +574,10 @@ footer span {
   text-align: left;
 }
 
+.artists-text {
+  padding-top: 150px;
+}
+
 .page-text {
   padding-top: 30px;
   color: #fff;
@@ -605,6 +622,10 @@ footer span {
   margin-top: -33px;
 }
 
+.david-buckel {
+  width: 80%;
+}
+
 .do-what-i-want {
   width: 100%;
   transform: translate(0, 10%);
@@ -612,6 +633,11 @@ footer span {
 
 .do-what-i-want-band {
   margin-top: 21px;
+}
+
+.do-what-i-want-release {
+  width: 100%;
+  transform: translateX(-30px);
 }
 
 .releases-text {
@@ -631,15 +657,30 @@ footer span {
 .bila-logo,
 .four-hundred-ppm-logo {
   width: 100%;
+  transition-duration: 500ms;
+}
+
+.bila-logo:hover,
+.four-hundred-ppm-logo:hover {
+  opacity: 0;
 }
 
 .bila-logo-container,
 .four-hundred-ppm-logo-container {
-  background-color: #fff;
   min-height: 250px;
   overflow: hidden;
   display: flex;
   align-items: center;
+}
+
+.bila-logo-container {
+  background-image: url(img/WN_BILA_4.jpg);
+  background-size: cover;
+}
+
+.four-hundred-ppm-logo-container {
+  background-image: url(img/400ppm.jpg);
+  background-size: cover;
 }
 
 .artists-spacing {
@@ -650,11 +691,13 @@ footer span {
   text-align: center;
 }
 
-.bila-hero {
+.bila-hero,
+.four-hundred-ppm-hero {
   margin-bottom: 200px;
 }
 
-.bila-page {
+.bila-page,
+.four-hundred-ppm-page {
   margin-top: -280px;
 }
 
@@ -664,16 +707,44 @@ footer span {
     url(img/WN_BILA_3.jpg);
 }
 
+.four-hundred-ppm-hero,
+.four-hundred-ppm-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/400ppm.jpg);
+}
+
 .david-buckel-hero,
 .david-buckel-page {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400PPM\ Front\ Cover.png);
 }
 
+.deheb-incens-u-bila-hero,
+.deheb-incens-u-bila-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/bila\ deheb\ incens\ u.jpg);
+}
+
+.bestjarju-hero,
+.bestjarju-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/Bestjarju\ poster\ 1.jpg);
+}
+
+.do-what-i-want-hero,
+.do-what-i-want-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
+}
+
 .artists-hero,
 .releases-hero,
 .bila-page,
-.david-buckel-page {
+.four-hundred-ppm-page,
+.david-buckel-page,
+.deheb-incens-u-bila-page,
+.bestjarju-page,
+.do-what-i-want-page {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -681,7 +752,8 @@ footer span {
 }
 
 .releases-hero nav,
-.bila-hero nav {
+.bila-hero nav,
+.four-hundred-ppm-hero nav {
   padding-top: 0;
   margin-top: -80px;
 }
@@ -705,12 +777,17 @@ footer span {
   transition: 200ms;
 }
 
-.bila-photo-div {
+.bila-photo-div,
+.four-hundred-ppm-photo-div {
   overflow: hidden;
 }
 
 .bila-photo {
   width: 130%;
+}
+
+.four-hundred-ppm-photo {
+  width: 100%;
 }
 
 .artists-about {
@@ -735,4 +812,29 @@ footer span {
 
 .artist-links li:first-child {
   padding-left: 150px;
+}
+
+.index-updates {
+  font-size: 150%;
+  text-align: center;
+  padding-top: 200px;
+  padding-right: 200px;
+}
+
+.form-messages {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.success {
+  background-color: rgb(31, 112, 31);
+  color: #fff;
+}
+
+.error {
+  background-color: rgb(104, 25, 25);
+  color: #fff;
 }

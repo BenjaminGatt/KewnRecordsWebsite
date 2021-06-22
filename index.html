@@ -11,11 +11,13 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/jpg" href="resources/img/KEWNrecords_emblem_Inverted.png"/>
     <!--This title will apear in the browser tab.-->
     <title>KEWN Records</title>
   </head>
@@ -25,23 +27,26 @@
     <header class="no-select" id="top">
       <nav>
         <div class="row">
-          <a href="index.html"
+          <a href="index.php"
             ><img
               src="resources/img/KEWNrecords_emblem_Inverted.png"
               alt="KEWN Records logo"
               class="logo"
           /></a>
           <ul class="main-nav">
-            <li><a class="selected" href="index.html">Home</a></li>
+            <li><a class="selected" href="index.php">Home</a></li>
             <li><a href="releases.html">Releases</a></li>
             <li><a href="artists.html">Artists</a></li>
             <li><a href="updates.html">Updates</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
-          <a class="mobile-nav-icon js--nav-icon">
-            <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
-            <ion-icon name="close-outline" class="close-icon"></ion-icon>
+          <a class="mobile-nav-icon">
+            <svg viewBox="0 0 100 80" width="40" height="40">
+              <rect width="100" height="12" fill="#fff"></rect>
+              <rect y="30" width="100" height="12" fill="#fff"></rect>
+              <rect y="60" width="100" height="12" fill="#fff"></rect>
+            </svg>
           </a>
         </div>
       </nav>
@@ -53,16 +58,15 @@
       </div>
       <div class="hero-text-box">
         <h1>
-          Catchy line or short description about your purpose, services,<br />or
-          why artists should choose you to distribute their music.
+        Established in late 2017 kewn records is an independent record label and artist collective based in Malta, working exclusively to release Maltese music internationally.
         </h1>
-        <a class="btn btn-full" href="about.html">About Us</a>
+        <a class="btn btn-full about-btn" href="about.html">About Us</a>
       </div>
     </header>
     <div class="banner">
       <img id="banner-img" src="resources/img/banner/BILA_Banner_OUT_NOW.jpg" />
-      <button type="button" onclick="displayPreviousImage()">Previous</button>
-      <button type="button" onclick="displayNextImage()">Next</button>
+      <button type="button" onclick="displayPreviousImage()" class="previous-btn"><</button>
+      <button type="button" onclick="displayNextImage()" class="next-btn">></button>
     </div>
 
     <section class="updates">
@@ -80,7 +84,7 @@
         </div>
         <div class="col span-1-of-2">
           <div class="fb-post top-frame" data-href="https://www.facebook.com/kewnrecords/posts/2255759074689457" data-width="400" data-show-text="true"><blockquote cite="https://www.facebook.com/kewnrecords/posts/2255759074689457" class="fb-xfbml-parse-ignore"><p>Have you seen 400ppm &#039;s music video for &#039;David Buckel&#039; ? It&#039;s available on 7&quot; vinyl!</p>Posted by <a href="https://www.facebook.com/kewnrecords/">Kewn Records</a> on&nbsp;<a href="https://www.facebook.com/kewnrecords/posts/2255759074689457">Monday, 6 May 2019</a></blockquote></div>
-          <h3>
+          <h3 class="index-updates">
             <a href="updates.html">
               Click here for<br />
               more updates</a
@@ -90,7 +94,7 @@
       </div>
     </section>
 
-    <section class="contact-us-home" id="form">
+    <section class="contact-us-home">
       <div class="row">
           <h2>Contact Us</h2>
       </div>
@@ -98,12 +102,13 @@
           <form method="post" action="resources/php/mailer-new.php" class="contact-form">
               <div class="row">
                   <?php
-                  <div class="form-messages success">
-                      Thank you! Your message has been sent.
-                  </div>
-                  <!--<div class="form-messages error">
-                      Oops! Something went wrong. Please try again!
-                  </div>-->
+                  if($_GET['success'] == 1) {
+                    echo "<div class=\"form-messages success\">Thank you! Your message has been sent.</div>";
+                  }
+
+                  if($_GET['success'] == -1) {
+                    echo "<div class=\"form-messages error\">Oops! Something went wrong. Please try again!</div>";
+                  }
                   ?>
               </div>
               <div class="row">
@@ -140,7 +145,7 @@
                   <div class="col span-1-of-3">
                       <label>&nbsp;</label>
                   </div>
-                  <div class="col span-2-of-3">
+                  <div class="col span-2-of-3" id="form">
                       <!--This will be a button for the user to submit the form.-->
                       <input type="submit" value="Submit">
                   </div>
@@ -220,7 +225,7 @@
     </div>
     <div class="row">
         <!--&copy; is the copyright symbol.-->
-        <p> Copyright &copy; 2021 by Kewn Records. All rights reserved. Logo by White Noise. Website by Benjamin Gatt</p>
+        <p>Copyright &copy; 2021 by Kewn Records. All rights reserved. Logo by White Noise. Website by Benjamin Gatt.</p>
     </div>
 </footer>
     <script src="/resources/js/scripts.js"></script>

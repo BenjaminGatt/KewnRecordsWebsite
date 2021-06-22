@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/jpg" href="resources/img/KEWNrecords_emblem_Inverted.png"/>
     <!--This title will apear in the browser tab.-->
     <title>KEWN Records</title>
   </head>
@@ -23,19 +24,19 @@
     <header class="no-select">
       <nav>
         <div class="row">
-          <a href="index.html"
+          <a href="index.php"
             ><img
               src="resources/img/KEWNrecords_emblem_Inverted.png"
               alt="KEWN Records logo"
               class="logo"
           /></a>
           <ul class="main-nav">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="releases.html">Releases</a></li>
             <li><a href="artists.html">Artists</a></li>
             <li><a href="updates.html">Updates</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a class="selected" href="contact.html">Contact</a></li>
+            <li><a class="selected" href="contact.php">Contact</a></li>
           </ul>
           <a class="mobile-nav-icon js--nav-icon">
             <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
@@ -43,21 +44,22 @@
           </a>
         </div>
       </nav>
-      <div class="row page-title">
+      <div class="row page-title" id="form">
         <h1>Contact</h1>
       </div>
 
       <div class="row">
-        <form method="post" action="resources/php/mailer-new.php" class="contact-form">
+        <form method="post" action="resources/php/mailer-new-contact.php" class="contact-form">
             <div class="row">
-                <?php
-                <div class="form-messages success">
-                    Thank you! Your message has been sent.
-                </div>
-                <!--<div class="form-messages error">
-                    Oops! Something went wrong. Please try again!
-                </div>-->
-                ?>
+              <?php
+              if($_GET['success'] == 1) {
+                echo "<div class=\"form-messages success\">Thank you! Your message has been sent.</div>";
+              }
+
+              if($_GET['success'] == -1) {
+                echo "<div class=\"form-messages error\">Oops! Something went wrong. Please try again!</div>";
+              }
+              ?>
             </div>
             <div class="row">
                 <div class="col span-1-of-3">
@@ -174,7 +176,7 @@
         </div>
         <div class="row">
             <!--&copy; is the copyright symbol.-->
-            <p> Copyright &copy; 2021 by Kewn Records. All rights reserved.</p>
+            <p>Copyright &copy; 2021 by Kewn Records. All rights reserved. Logo by White Noise. Website by Benjamin Gatt.</p>
         </div>
     </footer>
   </body>

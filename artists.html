@@ -16,6 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="resources/img/KEWNrecords_emblem_Inverted.png"
+    />
     <!--This title will apear in the browser tab.-->
     <title>KEWN Records</title>
   </head>
@@ -23,19 +28,19 @@
     <header class="no-select">
       <nav>
         <div class="row">
-          <a href="index.html"
+          <a href="index.php"
             ><img
               src="resources/img/KEWNrecords_emblem_Inverted.png"
               alt="KEWN Records logo"
               class="logo"
           /></a>
           <ul class="main-nav">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="releases.html">Releases</a></li>
             <li><a class="selected" href="artists.html">Artists</a></li>
             <li><a href="updates.html">Updates</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
           <a class="mobile-nav-icon js--nav-icon">
             <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
@@ -51,10 +56,10 @@
           <a href="bila.html"
             ><div class="bila-logo-container">
               <img
+                id="bila-logo"
                 class="bila-logo"
                 src="resources/img/BILA_logo.png"
                 alt="Deheb, Incens u Bila vinyl image"
-                class="logo"
               />
             </div>
             <h1>Bila</h1>
@@ -62,16 +67,17 @@
           </a>
         </div>
         <div class="col span-1-of-4">
-          <div class="four-hundred-ppm-logo-container">
-            <img
-              class="four-hundred-ppm-logo"
-              src="resources/img/400ppm logo.png"
-              alt="David Buckel vinyl image"
-              class="logo"
-            />
-          </div>
-          <h1>400 PPM</h1>
-          <p class="releases-text">Punk</p>
+          <a href="400ppm.html">
+            <div class="four-hundred-ppm-logo-container">
+              <img
+                class="four-hundred-ppm-logo"
+                src="resources/img/400ppm logo.png"
+                alt="David Buckel vinyl image"
+              />
+            </div>
+            <h1>400 PPM</h1>
+            <p class="releases-text">Punk</p>
+          </a>
         </div>
       </div>
       <div class="row">
@@ -185,7 +191,10 @@
       </div>
       <div class="row">
         <!--&copy; is the copyright symbol.-->
-        <p>Copyright &copy; 2021 by Kewn Records. All rights reserved.</p>
+        <p>
+          Copyright &copy; 2021 by Kewn Records. All rights reserved. Logo by
+          White Noise. Website by Benjamin Gatt.
+        </p>
       </div>
     </footer>
   </body>
