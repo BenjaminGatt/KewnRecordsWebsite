@@ -300,7 +300,8 @@ header {
   margin-top: 50px;
 }
 
-.logo {
+.logo,
+.releases-media {
   height: 100px;
   width: auto;
   /*This element will float to the left side.*/
@@ -667,7 +668,6 @@ footer span {
 
 .bila-logo-container,
 .four-hundred-ppm-logo-container {
-  min-height: 250px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -837,4 +837,8 @@ footer span {
 .error {
   background-color: rgb(104, 25, 25);
   color: #fff;
+}
+
+.bila-page-query {
+  display: none;
 }

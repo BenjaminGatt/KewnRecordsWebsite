@@ -59,6 +59,41 @@
     margin: 0 0 4% 0;
   }
 
+  .releases-col {
+    text-align: center;
+  }
+
+  .bestjarju {
+    transform: translate(-10%, -5%);
+  }
+
+  .releases-row {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(img/hero-image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+
+  .page-title,
+  .page-text p {
+    text-align: center;
+  }
+
+  .release-media-div {
+    padding-left: 35%;
+    padding-right: auto;
+  }
+
+  .stream-query {
+    display: none;
+  }
+
+  .bila-page-query {
+    display: block;
+  }
+
   /* .mobile-nav-icon {
     display: block;
     float: right;
@@ -90,6 +125,10 @@
   .hero-text-box h1 {
     transform: translateY(20%);
   }
+
+  .about-logo {
+    transform: scale(80%) translateX(-12.5%);
+  }
 }
 
 @media only screen and (max-width: 623px) {
@@ -120,5 +159,9 @@
     transform: translateX(-50%);
     width: 50%;
     margin-top: 30px;
+  }
+
+  .submit-btn-query {
+    text-align: center;
   }
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
@@ -91,11 +92,11 @@
                     <textarea name="message" id="message" placeholder="Your message here"></textarea>
                 </div>
             </div>
-            <div class="row">
+            <div class="row contact-submit-row">
                 <div class="col span-1-of-3">
                     <label>&nbsp;</label>
                 </div>
-                <div class="col span-2-of-3">
+                <div class="col span-2-of-3 submit-btn-query">
                     <!--This will be a button for the user to submit the form.-->
                     <input type="submit" value="Submit">
                 </div>
