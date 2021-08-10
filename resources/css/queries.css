@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @media only screen and (max-width: 1180px) {
   .main-nav {
     margin-right: 30px;
@@ -16,20 +23,28 @@
   .hero-text-box h1 {
     font-size: 120%;
     line-height: 150%;
+    -webkit-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
     transform: translate(0%, 0%);
   }
 
   .hero-text-box a {
+    -webkit-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
     transform: translateX(-120%);
   }
 }
 
 @media only screen and (max-width: 986px) {
   .hero-text-box h1 {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
     transform: translateY(0%);
   }
 
   .hero-text-box a {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
     transform: translateX(-100%);
   }
 }
@@ -42,11 +57,15 @@
 
   .main-nav {
     float: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
   }
 
   .hero-text-box a {
+    -webkit-transform: translateX(-80%);
+    -ms-transform: translateX(-80%);
     transform: translateX(-80%);
   }
 
@@ -64,10 +83,22 @@
   }
 
   .bestjarju {
+    -webkit-transform: translate(-10%, -5%);
+    -ms-transform: translate(-10%, -5%);
     transform: translate(-10%, -5%);
   }
 
   .releases-row {
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 0.7)),
+        to(rgba(0, 0, 0, 0.7))
+      ),
+      url(img/hero-image.jpg);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(img/hero-image.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url(img/hero-image.jpg);
     background-size: cover;
@@ -95,11 +126,11 @@
   }
 
   /* .mobile-nav-icon {
-    display: block;
-    float: right;
-    margin-right: 30px;
-    margin-top: 30px;
-  } */
+      display: block;
+      float: right;
+      margin-right: 30px;
+      margin-top: 30px;
+    } */
 }
 
 @media only screen and (max-width: 799px) {
@@ -109,6 +140,8 @@
   }
 
   .hero-text-box h1 {
+    -webkit-transform: translateY(10%);
+    -ms-transform: translateY(10%);
     transform: translateY(10%);
   }
 }
@@ -119,20 +152,42 @@
     margin-left: 30px;
     margin-bottom: 30px;
   }
+
+  /* .hero-text-box {
+    margin-top: 200px;
+  } */
+
+  .hero-text-box h1 {
+    font-size: 70%;
+  }
+
+  .btn:link {
+    font-size: 80%;
+  }
+
+  .hero-logo {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 661px) {
   .hero-text-box h1 {
+    -webkit-transform: translateY(20%);
+    -ms-transform: translateY(20%);
     transform: translateY(20%);
   }
 
   .about-logo {
+    -webkit-transform: scale(80%) translateX(-12.5%);
+    -ms-transform: scale(80%) translateX(-12.5%);
     transform: scale(80%) translateX(-12.5%);
   }
 }
 
 @media only screen and (max-width: 623px) {
   .hero-text-box a {
+    -webkit-transform: translateX(-60%);
+    -ms-transform: translateX(-60%);
     transform: translateX(-60%);
   }
 }
@@ -141,6 +196,8 @@
   .hero-logo img,
   .about-logo img {
     width: 30%;
+    -webkit-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
     transform: translate(-50%, -100%);
   }
 
@@ -152,10 +209,14 @@
     top: 80%;
   }
   .hero-text-box h1 {
+    -webkit-transform: translateY(8%);
+    -ms-transform: translateY(8%);
     transform: translateY(8%);
   }
 
   .hero-text-box a {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 50%;
     margin-top: 30px;

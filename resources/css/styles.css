@@ -1,4 +1,11 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
 
     Dark Grey: #2f3234
     Offwhite: #d0cdcb
@@ -15,6 +22,7 @@
   margin: 0;
   padding: 0;
   /*Setting box-sizing to border-box makes it easier to keep formatting of elements consistent. Refer to the CSS box model notes for more info.*/
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   list-style: none;
 }
@@ -38,7 +46,7 @@ body {
 }
 
 /*We've added this to clear the floats used in the Favourite Meals images section. Specifically, this class clears the float after an element.
-      We will be using it to stop the How it Works section from starting mid-way through the Favourite Meals section and ruining the whitespace.*/
+        We will be using it to stop the How it Works section from starting mid-way through the Favourite Meals section and ruining the whitespace.*/
 .clearfix {
   zoom: 1;
 }
@@ -57,10 +65,10 @@ body {
 /*Here we define the row class so that we can use it in conjunction with the grid.css stylesheet.*/
 .row {
   /*This is the only value which should be defined in absolute pixels. Everything else will be defined in percentages. 
-          Except for a bunch of other selectors, apparently.*/
+            Except for a bunch of other selectors, apparently.*/
   max-width: 1140px;
   /*This shorthand sets the top and bottom margins to 0, and the left and right margins to auto.
-          We're doing this to center our content within elements with the .row class on the screen.*/
+            We're doing this to center our content within elements with the .row class on the screen.*/
   margin: 0 auto;
 }
 
@@ -79,7 +87,7 @@ h1,
 h2,
 h3 {
   /*When increasing font size, decreasing font-weight makes it look neater and more professional.
-          h1 elements usually come with bold formatting, and we don't want that in this case.*/
+            h1 elements usually come with bold formatting, and we don't want that in this case.*/
   font-weight: 300;
   /*Transforming text to uppercase changes the text to uppercase without us having to do it manually.*/
   text-transform: uppercase;
@@ -91,7 +99,7 @@ h1 {
   margin-bottom: 20px;
   color: #fff;
   /*In responsive web design, we want everything to be relative. Our base font-size is 20px, as set in the html rule above.
-          So we will set our h1 font-size to be relative to that value, instead of applying another fixed value.*/
+            So we will set our h1 font-size to be relative to that value, instead of applying another fixed value.*/
   font-size: 150%;
   /*Some letter spacing and word spacing can really make a difference in a headline.*/
   letter-spacing: 1px;
@@ -181,6 +189,8 @@ a:visited {
   text-decoration: none;
   padding-bottom: 1px;
   /* border-bottom: 1px solid #e67e22; */
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  -o-transition: border-bottom 0.2s, color 0.2s;
   transition: border-bottom 0.2s, color 0.2s;
 }
 
@@ -194,14 +204,14 @@ a:active {
 
 /*This btn class has declarations whcih will be common to all buttons.*/
 /*Links/buttons can have different states: link, visited, active, and hover. Link is how the element looks normally.
-      We declare this using pseudo-classes. A pseudo-class is used to define a special state of an element.
-      We also don't want the button to look differently after it's been clicked, so we make the visited state identical
-      to the link state.*/
+        We declare this using pseudo-classes. A pseudo-class is used to define a special state of an element.
+        We also don't want the button to look differently after it's been clicked, so we make the visited state identical
+        to the link state.*/
 .btn:link,
 .btn:visited,
 input[type="submit"] {
   /*An inline block is like an inline element but can have padding and margins. It still does not force a line-break.
-          Link (<a>) elements are inline, but we want these to be inline-blocks instead.*/
+            Link (<a>) elements are inline, but we want these to be inline-blocks instead.*/
   display: inline-block;
   /*Top and bottom padding 10px, left and right padding 30px.*/
   padding: 25px 30px;
@@ -212,6 +222,8 @@ input[type="submit"] {
   /*Applying a border radius rounds the corners of the buttons.*/
   border-radius: 200px;
   /*We've set a duration for the transition between background colors, border colors, and text colors. The change is now no longer instantaneous.*/
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  -o-transition: background-color 0.2s, border 0.2s, color 0.2s;
   transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -221,7 +233,7 @@ input[type="submit"] {
   background-color: #d0cdcb;
   color: #2f3234;
   /*We've applied the same border we have for the ghost button to this button so that both buttons will be the same height and width due to box-sizing.
-          Referring to the box model, the height and width of an element is the content + padding + border.*/
+            Referring to the box model, the height and width of an element is the content + padding + border.*/
   border: 1px solid #d0cdcb;
   /*Added a bit of space between the two buttons.*/
   margin-right: 15px;
@@ -235,7 +247,7 @@ input[type="submit"] {
 }
 
 /*What will happen when the user hovers over or clicks the button.
-      NOTE: The hover and active pseudo-classes should be placed after the link and visited pseudo-classes so that the hover animation is applied properly.*/
+        NOTE: The hover and active pseudo-classes should be placed after the link and visited pseudo-classes so that the hover animation is applied properly.*/
 .btn:hover,
 .btn:active,
 input[type="submit"]:hover,
@@ -257,7 +269,17 @@ input[type="submit"]:active {
 header {
   /*We've placed the hero image in the css folder because we need to use it in CSS.*/
   /*We've added a gradient over the background image to create contrast with the text that goes on top.
-          This gradient is one color in this case, and has a transparency of 70%.*/
+            This gradient is one color in this case, and has a transparency of 70%.*/
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(img/hero-image.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero-image.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
   /*Background-size: cover, makes it so that the entire image is displayed on the screen.*/
@@ -267,12 +289,15 @@ header {
   /*Image will remain static even when page is being scrolled.*/
   background-attachment: fixed;
   /*We've set the height of the header to 100% of the viewport, so that the entire image is shown in the header.
-          If we don't do this, the image will still be in the header, but only the parts where other content, such as
-          text, are present, will be visible.*/
+            If we don't do this, the image will still be in the header, but only the parts where other content, such as
+            text, are present, will be visible.*/
   height: 100vh;
 }
 
 .no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -284,6 +309,8 @@ header {
   top: 50%;
   left: 50%;
   /*Transform: translate(-50%, -50%) will move the element half its width and half its height backwards, so that it will be centered.*/
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   padding-top: 250px;
   text-align: center;
@@ -296,6 +323,8 @@ header {
 .hero-text-box a {
   display: inline-block;
   margin-left: 50%;
+  -webkit-transform: translateX(-180%);
+  -ms-transform: translateX(-180%);
   transform: translateX(-180%);
   margin-top: 50px;
 }
@@ -321,6 +350,8 @@ header {
 .hero-logo img,
 .about-logo img {
   width: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -352,20 +383,22 @@ header {
 .main-nav li a:link,
 .main-nav li a:visited {
   /*Top and bottom padding 8px, left and right padding 0px. This is to have some space between the button text and the
-          bottom border that appears on hover.*/
+            bottom border that appears on hover.*/
   padding: 8px 0;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 90%;
   /*We want this to have a border, so that it can appear on hover. However, we don't want it to appear while it is not hovered,
-          so we make it transparent here.*/
+            so we make it transparent here.*/
   border-bottom: 2px solid transparent;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
   border-bottom: 2px solid #e67e22;
+  -webkit-transition: border-bottom 0.2s;
+  -o-transition: border-bottom 0.2s;
   transition: border-bottom 0.2s;
 }
 
@@ -486,6 +519,8 @@ footer {
 .social-links li a:visited {
   text-decoration: none;
   border: 0;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
   transition: color 0.2s;
 }
 
@@ -498,6 +533,8 @@ footer {
 .twitter-icon,
 .googleplus-icon,
 .instagram-icon {
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
   transition: color 0.2s;
 }
 
@@ -541,7 +578,11 @@ footer span {
 }
 
 .to-top a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border: 0;
 }
@@ -616,6 +657,8 @@ footer span {
 
 .bestjarju {
   width: 130%;
+  -webkit-transform: translate(-20%, -10%);
+  -ms-transform: translate(-20%, -10%);
   transform: translate(-20%, -10%);
 }
 
@@ -629,6 +672,8 @@ footer span {
 
 .do-what-i-want {
   width: 100%;
+  -webkit-transform: translate(0, 10%);
+  -ms-transform: translate(0, 10%);
   transform: translate(0, 10%);
 }
 
@@ -638,6 +683,8 @@ footer span {
 
 .do-what-i-want-release {
   width: 100%;
+  -webkit-transform: translateX(-30px);
+  -ms-transform: translateX(-30px);
   transform: translateX(-30px);
 }
 
@@ -648,6 +695,16 @@ footer span {
 }
 
 .updates-middle {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(img/hero-image.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero-image.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
   background-size: cover;
@@ -658,6 +715,8 @@ footer span {
 .bila-logo,
 .four-hundred-ppm-logo {
   width: 100%;
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
   transition-duration: 500ms;
 }
 
@@ -669,7 +728,11 @@ footer span {
 .bila-logo-container,
 .four-hundred-ppm-logo-container {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -703,36 +766,96 @@ footer span {
 
 .bila-hero,
 .bila-page {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/WN_BILA_3.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/WN_BILA_3.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/WN_BILA_3.jpg);
 }
 
 .four-hundred-ppm-hero,
 .four-hundred-ppm-page {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/400ppm.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/400ppm.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400ppm.jpg);
 }
 
 .david-buckel-hero,
 .david-buckel-page {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/400PPM\ Front\ Cover.png);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/400PPM\ Front\ Cover.png);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400PPM\ Front\ Cover.png);
 }
 
 .deheb-incens-u-bila-hero,
 .deheb-incens-u-bila-page {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/bila\ deheb\ incens\ u.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/bila\ deheb\ incens\ u.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/bila\ deheb\ incens\ u.jpg);
 }
 
 .bestjarju-hero,
 .bestjarju-page {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/Bestjarju\ poster\ 1.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/Bestjarju\ poster\ 1.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bestjarju\ poster\ 1.jpg);
 }
 
 .do-what-i-want-hero,
 .do-what-i-want-page {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
 }
@@ -767,13 +890,19 @@ footer span {
 }
 
 .release-media-div img {
+  -webkit-transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
   transform: scale(2, 2);
 }
 
 .release-media-div img:hover {
+  -webkit-transform: scale(5, 5);
+  -ms-transform: scale(5, 5);
   transform: scale(5, 5);
   position: absolute;
   z-index: 999;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
   transition: 200ms;
 }
 
