@@ -1,7 +1,14 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
 * Browsers: last 4 version
 */
 
@@ -23,7 +30,7 @@
   padding: 0;
   /*Setting box-sizing to border-box makes it easier to keep formatting of elements consistent. Refer to the CSS box model notes for more info.*/
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   list-style: none;
 }
 
@@ -46,7 +53,7 @@ body {
 }
 
 /*We've added this to clear the floats used in the Favourite Meals images section. Specifically, this class clears the float after an element.
-        We will be using it to stop the How it Works section from starting mid-way through the Favourite Meals section and ruining the whitespace.*/
+      We will be using it to stop the How it Works section from starting mid-way through the Favourite Meals section and ruining the whitespace.*/
 .clearfix {
   zoom: 1;
 }
@@ -65,10 +72,10 @@ body {
 /*Here we define the row class so that we can use it in conjunction with the grid.css stylesheet.*/
 .row {
   /*This is the only value which should be defined in absolute pixels. Everything else will be defined in percentages. 
-            Except for a bunch of other selectors, apparently.*/
+          Except for a bunch of other selectors, apparently.*/
   max-width: 1140px;
   /*This shorthand sets the top and bottom margins to 0, and the left and right margins to auto.
-            We're doing this to center our content within elements with the .row class on the screen.*/
+          We're doing this to center our content within elements with the .row class on the screen.*/
   margin: 0 auto;
 }
 
@@ -87,7 +94,7 @@ h1,
 h2,
 h3 {
   /*When increasing font size, decreasing font-weight makes it look neater and more professional.
-            h1 elements usually come with bold formatting, and we don't want that in this case.*/
+          h1 elements usually come with bold formatting, and we don't want that in this case.*/
   font-weight: 300;
   /*Transforming text to uppercase changes the text to uppercase without us having to do it manually.*/
   text-transform: uppercase;
@@ -99,7 +106,7 @@ h1 {
   margin-bottom: 20px;
   color: #fff;
   /*In responsive web design, we want everything to be relative. Our base font-size is 20px, as set in the html rule above.
-            So we will set our h1 font-size to be relative to that value, instead of applying another fixed value.*/
+          So we will set our h1 font-size to be relative to that value, instead of applying another fixed value.*/
   font-size: 150%;
   /*Some letter spacing and word spacing can really make a difference in a headline.*/
   letter-spacing: 1px;
@@ -204,14 +211,14 @@ a:active {
 
 /*This btn class has declarations whcih will be common to all buttons.*/
 /*Links/buttons can have different states: link, visited, active, and hover. Link is how the element looks normally.
-        We declare this using pseudo-classes. A pseudo-class is used to define a special state of an element.
-        We also don't want the button to look differently after it's been clicked, so we make the visited state identical
-        to the link state.*/
+      We declare this using pseudo-classes. A pseudo-class is used to define a special state of an element.
+      We also don't want the button to look differently after it's been clicked, so we make the visited state identical
+      to the link state.*/
 .btn:link,
 .btn:visited,
 input[type="submit"] {
   /*An inline block is like an inline element but can have padding and margins. It still does not force a line-break.
-            Link (<a>) elements are inline, but we want these to be inline-blocks instead.*/
+          Link (<a>) elements are inline, but we want these to be inline-blocks instead.*/
   display: inline-block;
   /*Top and bottom padding 10px, left and right padding 30px.*/
   padding: 25px 30px;
@@ -233,7 +240,7 @@ input[type="submit"] {
   background-color: #d0cdcb;
   color: #2f3234;
   /*We've applied the same border we have for the ghost button to this button so that both buttons will be the same height and width due to box-sizing.
-            Referring to the box model, the height and width of an element is the content + padding + border.*/
+          Referring to the box model, the height and width of an element is the content + padding + border.*/
   border: 1px solid #d0cdcb;
   /*Added a bit of space between the two buttons.*/
   margin-right: 15px;
@@ -247,7 +254,7 @@ input[type="submit"] {
 }
 
 /*What will happen when the user hovers over or clicks the button.
-        NOTE: The hover and active pseudo-classes should be placed after the link and visited pseudo-classes so that the hover animation is applied properly.*/
+      NOTE: The hover and active pseudo-classes should be placed after the link and visited pseudo-classes so that the hover animation is applied properly.*/
 .btn:hover,
 .btn:active,
 input[type="submit"]:hover,
@@ -269,16 +276,10 @@ input[type="submit"]:active {
 header {
   /*We've placed the hero image in the css folder because we need to use it in CSS.*/
   /*We've added a gradient over the background image to create contrast with the text that goes on top.
-            This gradient is one color in this case, and has a transparency of 70%.*/
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.7)),
-      to(rgba(0, 0, 0, 0.7))
-    ),
-    url(img/hero-image.jpg);
+          This gradient is one color in this case, and has a transparency of 70%.*/
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero-image.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),
     url(img/hero-image.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
@@ -289,16 +290,16 @@ header {
   /*Image will remain static even when page is being scrolled.*/
   background-attachment: fixed;
   /*We've set the height of the header to 100% of the viewport, so that the entire image is shown in the header.
-            If we don't do this, the image will still be in the header, but only the parts where other content, such as
-            text, are present, will be visible.*/
+          If we don't do this, the image will still be in the header, but only the parts where other content, such as
+          text, are present, will be visible.*/
   height: 100vh;
 }
 
 .no-select {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .hero-text-box {
@@ -310,8 +311,8 @@ header {
   left: 50%;
   /*Transform: translate(-50%, -50%) will move the element half its width and half its height backwards, so that it will be centered.*/
   -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding-top: 250px;
   text-align: center;
 }
@@ -324,8 +325,8 @@ header {
   display: inline-block;
   margin-left: 50%;
   -webkit-transform: translateX(-180%);
-  -ms-transform: translateX(-180%);
-  transform: translateX(-180%);
+      -ms-transform: translateX(-180%);
+          transform: translateX(-180%);
   margin-top: 50px;
 }
 
@@ -351,8 +352,8 @@ header {
 .about-logo img {
   width: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .hero-logo {
@@ -383,14 +384,14 @@ header {
 .main-nav li a:link,
 .main-nav li a:visited {
   /*Top and bottom padding 8px, left and right padding 0px. This is to have some space between the button text and the
-            bottom border that appears on hover.*/
+          bottom border that appears on hover.*/
   padding: 8px 0;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 90%;
   /*We want this to have a border, so that it can appear on hover. However, we don't want it to appear while it is not hovered,
-            so we make it transparent here.*/
+          so we make it transparent here.*/
   border-bottom: 2px solid transparent;
 }
 
@@ -582,8 +583,8 @@ footer span {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 0;
 }
 
@@ -658,8 +659,8 @@ footer span {
 .bestjarju {
   width: 130%;
   -webkit-transform: translate(-20%, -10%);
-  -ms-transform: translate(-20%, -10%);
-  transform: translate(-20%, -10%);
+      -ms-transform: translate(-20%, -10%);
+          transform: translate(-20%, -10%);
 }
 
 .bestjarju-band {
@@ -673,8 +674,8 @@ footer span {
 .do-what-i-want {
   width: 100%;
   -webkit-transform: translate(0, 10%);
-  -ms-transform: translate(0, 10%);
-  transform: translate(0, 10%);
+      -ms-transform: translate(0, 10%);
+          transform: translate(0, 10%);
 }
 
 .do-what-i-want-band {
@@ -684,8 +685,8 @@ footer span {
 .do-what-i-want-release {
   width: 100%;
   -webkit-transform: translateX(-30px);
-  -ms-transform: translateX(-30px);
-  transform: translateX(-30px);
+      -ms-transform: translateX(-30px);
+          transform: translateX(-30px);
 }
 
 .releases-text {
@@ -695,15 +696,9 @@ footer span {
 }
 
 .updates-middle {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.7)),
-      to(rgba(0, 0, 0, 0.7))
-    ),
-    url(img/hero-image.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero-image.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),
     url(img/hero-image.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
@@ -713,27 +708,30 @@ footer span {
 }
 
 .bila-logo,
-.four-hundred-ppm-logo {
+.four-hundred-ppm-logo,
+.niket-logo {
   width: 100%;
   -webkit-transition-duration: 500ms;
-  -o-transition-duration: 500ms;
-  transition-duration: 500ms;
+       -o-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 .bila-logo:hover,
-.four-hundred-ppm-logo:hover {
+.four-hundred-ppm-logo:hover,
+.niket-logo:hover {
   opacity: 0;
 }
 
 .bila-logo-container,
-.four-hundred-ppm-logo-container {
+.four-hundred-ppm-logo-container,
+.niket-logo-container {
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .bila-logo-container {
@@ -746,6 +744,12 @@ footer span {
   background-size: cover;
 }
 
+.niket-logo-container {
+  background-image: url(img/niket-artist.jpg);
+  background-size: cover;
+  background-position-y: center;
+}
+
 .artists-spacing {
   margin-right: 50px;
 }
@@ -755,26 +759,22 @@ footer span {
 }
 
 .bila-hero,
-.four-hundred-ppm-hero {
+.four-hundred-ppm-hero,
+.niket-hero {
   margin-bottom: 200px;
 }
 
 .bila-page,
-.four-hundred-ppm-page {
+.four-hundred-ppm-page,
+.niket-page {
   margin-top: -280px;
 }
 
 .bila-hero,
 .bila-page {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(0, 0, 0, 0.8))
-    ),
-    url(img/WN_BILA_3.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/WN_BILA_3.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
     url(img/WN_BILA_3.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/WN_BILA_3.jpg);
@@ -782,31 +782,29 @@ footer span {
 
 .four-hundred-ppm-hero,
 .four-hundred-ppm-page {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(0, 0, 0, 0.8))
-    ),
-    url(img/400ppm.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/400ppm.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
     url(img/400ppm.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400ppm.jpg);
 }
 
+.niket-hero,
+.niket-page {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))),
+    url(img/DSC_0328-9.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(img/DSC_0328-9.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(img/DSC_0328-9.jpg);
+}
+
 .david-buckel-hero,
 .david-buckel-page {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(0, 0, 0, 0.8))
-    ),
-    url(img/400PPM\ Front\ Cover.png);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/400PPM\ Front\ Cover.png);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
     url(img/400PPM\ Front\ Cover.png);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400PPM\ Front\ Cover.png);
@@ -814,15 +812,9 @@ footer span {
 
 .deheb-incens-u-bila-hero,
 .deheb-incens-u-bila-page {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(0, 0, 0, 0.8))
-    ),
-    url(img/bila\ deheb\ incens\ u.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/bila\ deheb\ incens\ u.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
     url(img/bila\ deheb\ incens\ u.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/bila\ deheb\ incens\ u.jpg);
@@ -830,15 +822,9 @@ footer span {
 
 .bestjarju-hero,
 .bestjarju-page {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(0, 0, 0, 0.8))
-    ),
-    url(img/Bestjarju\ poster\ 1.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/Bestjarju\ poster\ 1.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
     url(img/Bestjarju\ poster\ 1.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bestjarju\ poster\ 1.jpg);
@@ -846,15 +832,9 @@ footer span {
 
 .do-what-i-want-hero,
 .do-what-i-want-page {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(0, 0, 0, 0.8))
-    ),
-    url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
     url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
@@ -864,6 +844,7 @@ footer span {
 .releases-hero,
 .bila-page,
 .four-hundred-ppm-page,
+.niket-page,
 .david-buckel-page,
 .deheb-incens-u-bila-page,
 .bestjarju-page,
@@ -891,14 +872,14 @@ footer span {
 
 .release-media-div img {
   -webkit-transform: scale(2, 2);
-  -ms-transform: scale(2, 2);
-  transform: scale(2, 2);
+      -ms-transform: scale(2, 2);
+          transform: scale(2, 2);
 }
 
 .release-media-div img:hover {
   -webkit-transform: scale(5, 5);
-  -ms-transform: scale(5, 5);
-  transform: scale(5, 5);
+      -ms-transform: scale(5, 5);
+          transform: scale(5, 5);
   position: absolute;
   z-index: 999;
   -webkit-transition: 200ms;
@@ -930,17 +911,23 @@ footer span {
   padding-left: 30px;
 }
 
-.artist-links {
+.artist-links,
+.artist-links-niket {
   padding-top: 30px;
 }
 
-.artist-links li {
+.artist-links li,
+.artist-links-niket li {
   display: inline-block;
   text-align: center;
 }
 
 .artist-links li:first-child {
   padding-left: 150px;
+}
+
+.artist-links-niket li:first-child {
+  padding-left: 120px;
 }
 
 .index-updates {

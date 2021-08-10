@@ -656,18 +656,21 @@ footer span {
 }
 
 .bila-logo,
-.four-hundred-ppm-logo {
+.four-hundred-ppm-logo,
+.niket-logo {
   width: 100%;
   transition-duration: 500ms;
 }
 
 .bila-logo:hover,
-.four-hundred-ppm-logo:hover {
+.four-hundred-ppm-logo:hover,
+.niket-logo:hover {
   opacity: 0;
 }
 
 .bila-logo-container,
-.four-hundred-ppm-logo-container {
+.four-hundred-ppm-logo-container,
+.niket-logo-container {
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -681,6 +684,12 @@ footer span {
 .four-hundred-ppm-logo-container {
   background-image: url(img/400ppm.jpg);
   background-size: cover;
+}
+
+.niket-logo-container {
+  background-image: url(img/niket-artist.jpg);
+  background-size: cover;
+  background-position-y: center;
 }
 
 .artists-spacing {
@@ -801,11 +810,13 @@ footer span {
   padding-left: 30px;
 }
 
-.artist-links {
+.artist-links,
+.artist-links-niket {
   padding-top: 30px;
 }
 
-.artist-links li {
+.artist-links li,
+.artist-links-niket li {
   display: inline-block;
   text-align: center;
 }
