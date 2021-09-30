@@ -30,7 +30,7 @@
   padding: 0;
   /*Setting box-sizing to border-box makes it easier to keep formatting of elements consistent. Refer to the CSS box model notes for more info.*/
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   list-style: none;
 }
 
@@ -279,7 +279,13 @@ header {
           This gradient is one color in this case, and has a transparency of 70%.*/
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
     url(img/hero-image.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
@@ -297,9 +303,9 @@ header {
 
 .no-select {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .hero-text-box {
@@ -311,8 +317,8 @@ header {
   left: 50%;
   /*Transform: translate(-50%, -50%) will move the element half its width and half its height backwards, so that it will be centered.*/
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   padding-top: 250px;
   text-align: center;
 }
@@ -325,8 +331,8 @@ header {
   display: inline-block;
   margin-left: 50%;
   -webkit-transform: translateX(-180%);
-      -ms-transform: translateX(-180%);
-          transform: translateX(-180%);
+  -ms-transform: translateX(-180%);
+  transform: translateX(-180%);
   margin-top: 50px;
 }
 
@@ -352,8 +358,8 @@ header {
 .about-logo img {
   width: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .hero-logo {
@@ -583,8 +589,8 @@ footer span {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: 0;
 }
 
@@ -659,8 +665,8 @@ footer span {
 .bestjarju {
   width: 130%;
   -webkit-transform: translate(-20%, -10%);
-      -ms-transform: translate(-20%, -10%);
-          transform: translate(-20%, -10%);
+  -ms-transform: translate(-20%, -10%);
+  transform: translate(-20%, -10%);
 }
 
 .bestjarju-band {
@@ -674,8 +680,8 @@ footer span {
 .do-what-i-want {
   width: 100%;
   -webkit-transform: translate(0, 10%);
-      -ms-transform: translate(0, 10%);
-          transform: translate(0, 10%);
+  -ms-transform: translate(0, 10%);
+  transform: translate(0, 10%);
 }
 
 .do-what-i-want-band {
@@ -685,8 +691,8 @@ footer span {
 .do-what-i-want-release {
   width: 100%;
   -webkit-transform: translateX(-30px);
-      -ms-transform: translateX(-30px);
-          transform: translateX(-30px);
+  -ms-transform: translateX(-30px);
+  transform: translateX(-30px);
 }
 
 .releases-text {
@@ -698,7 +704,13 @@ footer span {
 .updates-middle {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
     url(img/hero-image.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(img/hero-image.jpg);
@@ -712,8 +724,8 @@ footer span {
 .niket-logo {
   width: 100%;
   -webkit-transition-duration: 500ms;
-       -o-transition-duration: 500ms;
-          transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
 }
 
 .bila-logo:hover,
@@ -730,8 +742,8 @@ footer span {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .bila-logo-container {
@@ -774,7 +786,13 @@ footer span {
 .bila-page {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/WN_BILA_3.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
     url(img/WN_BILA_3.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/WN_BILA_3.jpg);
@@ -784,7 +802,13 @@ footer span {
 .four-hundred-ppm-page {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400ppm.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
     url(img/400ppm.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400ppm.jpg);
@@ -792,7 +816,13 @@ footer span {
 
 .niket-hero,
 .niket-page {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.2)),
+      to(rgba(0, 0, 0, 0.2))
+    ),
     url(img/DSC_0328-9.jpg);
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(img/DSC_0328-9.jpg);
@@ -800,21 +830,49 @@ footer span {
     url(img/DSC_0328-9.jpg);
 }
 
+.niket-page-releases-heading {
+  padding-top: 300px;
+}
+
+.niket-album-hero,
+.niket-album-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/NIKET-background-min.jpg);
+}
+
 .david-buckel-hero,
 .david-buckel-page {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400PPM\ Front\ Cover.png);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
     url(img/400PPM\ Front\ Cover.png);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/400PPM\ Front\ Cover.png);
+}
+
+.spirtu-pront-hero,
+.spirtu-pront-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/spirtu-pront-background-min.jpg);
 }
 
 .deheb-incens-u-bila-hero,
 .deheb-incens-u-bila-page {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/bila\ deheb\ incens\ u.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
     url(img/bila\ deheb\ incens\ u.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/bila\ deheb\ incens\ u.jpg);
@@ -824,7 +882,13 @@ footer span {
 .bestjarju-page {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bestjarju\ poster\ 1.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
     url(img/Bestjarju\ poster\ 1.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bestjarju\ poster\ 1.jpg);
@@ -834,7 +898,13 @@ footer span {
 .do-what-i-want-page {
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))),
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
     url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(img/Bila\ DoWhatIWant\ FRONT\ SQ.jpg);
@@ -843,8 +913,10 @@ footer span {
 .artists-hero,
 .releases-hero,
 .bila-page,
-.four-hundred-ppm-page,
 .niket-page,
+.niket-album-page,
+.four-hundred-ppm-page,
+.spirtu-pront-page,
 .david-buckel-page,
 .deheb-incens-u-bila-page,
 .bestjarju-page,
@@ -872,14 +944,14 @@ footer span {
 
 .release-media-div img {
   -webkit-transform: scale(2, 2);
-      -ms-transform: scale(2, 2);
-          transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  transform: scale(2, 2);
 }
 
 .release-media-div img:hover {
   -webkit-transform: scale(5, 5);
-      -ms-transform: scale(5, 5);
-          transform: scale(5, 5);
+  -ms-transform: scale(5, 5);
+  transform: scale(5, 5);
   position: absolute;
   z-index: 999;
   -webkit-transition: 200ms;

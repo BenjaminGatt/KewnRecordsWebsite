@@ -728,6 +728,12 @@ footer span {
     url(img/400PPM\ Front\ Cover.png);
 }
 
+.spirtu-pront-hero,
+.spirtu-pront-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/spirtu-pront-background-min.jpg);
+}
+
 .deheb-incens-u-bila-hero,
 .deheb-incens-u-bila-page {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
@@ -751,6 +757,7 @@ footer span {
 .bila-page,
 .four-hundred-ppm-page,
 .david-buckel-page,
+.spirtu-pront-page,
 .deheb-incens-u-bila-page,
 .bestjarju-page,
 .do-what-i-want-page {
