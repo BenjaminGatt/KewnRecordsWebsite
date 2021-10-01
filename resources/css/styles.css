@@ -346,6 +346,10 @@ header {
   margin-top: 20px;
 }
 
+.niket-release-img {
+  margin-top: 0;
+}
+
 .hero-logo,
 .about-logo {
   position: absolute;
